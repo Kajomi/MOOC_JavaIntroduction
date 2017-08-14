@@ -1,0 +1,30 @@
+import java.util.Scanner;
+ 
+public class ArvosanatJaPisteet {
+ 
+    public static void main(String[] args) {
+        Scanner lukija = new Scanner(System.in);
+         
+        System.out.println("Anna pisteet [0-100]: ");
+        int piste = Integer.parseInt(lukija.nextLine());
+         
+        if (piste > 100) {
+            System.out.println("uskomatonta!");
+        } else if (piste > 90) {
+            System.out.println("5");
+        } else if (piste > 80) {
+            System.out.println("4");
+        } else if (piste > 70) {
+            System.out.println("3");
+        } else if (piste > 60) {
+            System.out.println("2");
+        } else if (piste > 50) {
+            System.out.println("1");
+        } else if (piste >= 0) {
+            System.out.println("Hylätty");
+        } else {
+            System.out.println("Mahdotonta!");
+        }
+ 
+    }
+}
