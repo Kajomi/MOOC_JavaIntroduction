@@ -1,0 +1,51 @@
+// Paaohjelma.java:
+
+public class Main {
+ 
+    public static void main(String[] args) {
+        // Tämä on vain tyhjä main-metodi jossa voit kokeilla
+        // Musiikkikappale-luokkaasi. Kokeile esim:
+         
+        Musiikkikappale garden = new Musiikkikappale("In The Garden", 10910);
+        System.out.println("Kappaleen " + garden.nimi() + " pituus on " + garden.pituus() + " sekuntia.");
+         
+        // Omat kokeilut - musiikkivalinnat:
+        Musiikkikappale inMyLife = new Musiikkikappale("In my Life", 357);
+        Musiikkikappale comfortablyNumb = new Musiikkikappale("Comfortably Numb", 28930);
+         
+        int pariKappaletta = inMyLife.pituus() + comfortablyNumb.pituus();
+         
+        System.out.println("Kahden biisin yhteispituus on: " + pariKappaletta);
+    }
+}
+
+// Musiikkikappale.java:
+
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+ 
+/**
+ *
+ * @author mirak
+ */
+public class Musiikkikappale {
+    private String nimi;
+    private int pituus;
+     
+    public Musiikkikappale(String kappaleenNimi, int kappaleenPituus) {
+        this.nimi = kappaleenNimi;
+        this.pituus = kappaleenPituus;
+    }
+     
+    public String nimi() {
+        return this.nimi;
+    }
+     
+    public int pituus() {
+        return this.pituus;
+    }
+     
+}
