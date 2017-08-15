@@ -1,0 +1,39 @@
+import java.util.Scanner;
+ 
+public class Arvauspeli {
+ 
+    public static void main(String[] args) {
+        Scanner lukija = new Scanner(System.in);
+        int arvattava = 7;
+        int oikeatLuvut = 0;
+ 
+        System.out.println("Minäpä tiedän luvun väliltä 1-10, jota sinä et tiedä!");
+         
+        while (true) {
+            System.out.println("Arvaa luku: ");
+            int arvaus = Integer.parseInt(lukija.nextLine());
+             
+            if (arvaus == arvattava) {
+                oikeatLuvut++;
+                break;
+            }
+             
+            if (arvaus > 10) {
+                System.out.println("Epäkelpo luku!");
+                continue;
+            }
+             
+            if (arvaus < 1) {
+                System.out.println("Ei ollut!");
+                continue;
+            }
+             
+            oikeatLuvut++;
+        }
+         
+        System.out.println("Oikein! Arvauksia yhteensä: " + oikeatLuvut);
+         
+         
+ 
+    }
+}
