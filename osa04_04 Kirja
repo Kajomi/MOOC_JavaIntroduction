@@ -1,0 +1,73 @@
+// Paaohjelma.java:
+
+import java.util.ArrayList;
+import java.util.Scanner;
+ 
+public class Main {
+ 
+    public static void main(String[] args) {
+        // toteuta tänne toiminnallisuus, jonka avulla käyttäjä voi syöttää
+        // kirjoja sekä tarkastella niitä
+         
+        Scanner lukija = new Scanner(System.in);
+        ArrayList<Kirja> kirjat = new ArrayList<>();
+         
+        while(true) {
+            System.out.println("Nimi: ");
+            String nimi = lukija.nextLine();
+             
+            if (nimi.isEmpty()) {
+                break;
+            }
+             
+            System.out.println("Sivuja: ");
+            int sivu = Integer.parseInt(lukija.nextLine());
+            System.out.println("Kirjoitusvuosi: ");
+            int vuosi = Integer.parseInt(lukija.nextLine());
+             
+            kirjat.add(new Kirja(nimi, sivu, vuosi));
+        }
+         
+        System.out.println("Mitä tulostetaan? ");
+        String tulosta = lukija.nextLine();
+         
+        int i = 0;
+        while(i < kirjat.size()){
+            Kirja uusiKirja = kirjat.get(i);
+            if (tulosta.contains("kaikki")) {
+                System.out.println(uusiKirja);
+                i++;
+            } else if (tulosta.contains("nimi")) {
+                System.out.println(uusiKirja.getNimi());
+                i++;
+            }
+        }
+ 
+    }
+}
+
+// Kirja.java:
+
+/**
+ *
+ * @author mirak
+ */
+public class Kirja {
+    private String nimi;
+    private int sivuja;
+    private int vuosi;
+     
+    public Kirja(String nimi, int sivuja, int vuosi) {
+        this.nimi = nimi;
+        this.sivuja = sivuja;
+        this.vuosi = vuosi;
+    }
+     
+    public String getNimi() {
+        return this.nimi;
+    }
+     
+    public String toString() {
+        return this.nimi + ", " + this.sivuja + " sivua, " + this.vuosi;
+    }
+}
