@@ -1,0 +1,74 @@
+// Paaohjelma.java:
+
+public class Main {
+    public static void main(String[] args) {
+        Ruokalista exactum = new Ruokalista();
+         
+        // Kun olet luonut metodin lisaaAteria(String ateria),
+        // voit poistaa allaolevat kommentit
+         
+        exactum.lisaaAteria("Pariloitua lohta ja kuhaa, basilikalla maustettua valkoviinivoikastiketta.");
+        exactum.lisaaAteria("Kesäinen vihersalaatti ja omena-hunajavinegretti.");
+        exactum.lisaaAteria("Paahdettua karitsan seläkettä ja punaviinikastiketta.");
+         
+        // Kun olet luonut metodin tulostaAteriat(),
+        // voit poistaa allaolevan kommentin
+         
+        exactum.tulostaAteriat();
+         
+        // Kun olet luonut metodin tyhjennaRuokalista(), voit poistaa
+        // allaolevat kommentit
+        exactum.tyhjennaRuokalista();
+        exactum.tulostaAteriat();
+    }
+}
+
+// Ruokalista.java:
+
+import java.util.ArrayList;
+ 
+public class Ruokalista {
+ 
+    private ArrayList<String> ateriat;
+ 
+    public Ruokalista() {
+        this.ateriat = new ArrayList<>();
+    }
+     
+    public void lisaaAteria(String ateria) {
+        if (this.ateriat.contains(ateria)) {
+            String onListalla = ateria;
+        } else {
+            this.ateriat.add(ateria);
+        }
+    }
+     
+    public void tulostaAteriat() {
+        int i = 0;
+         
+        while (i < ateriat.size()) {
+            String ateria = this.ateriat.get(i);
+            System.out.println(this.ateriat.get(i));
+            i++;
+            //if (ateria.contains(1)) {
+            //    System.out.println(this.ateriat.get(0));
+            //} else if (ateria.contains) {
+            //    System.out.println(this.ateriat.get(1));
+            //} else {
+            //    System.out.println(this.ateriat.get(2));
+        }
+             
+        i++;
+    }
+     
+    public void tyhjennaRuokalista() {
+        this.ateriat.clear();
+    }
+}
+         
+         
+ 
+ 
+     
+ 
+    // toteuta tänne tarvittavat metodit
